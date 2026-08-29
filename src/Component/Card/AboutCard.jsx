@@ -5,8 +5,8 @@ import { MdOutlineCalendarMonth, MdOutlineContentCut } from 'react-icons/md';
 
 const AboutCard = () => {
     return (
-      <div className="lg:w-7xl mx-auto py-20">
-        <div className="grid grid-cols-3 gap-8">
+      <div className="lg:w-7xl lg:mx-auto lg:py-20 px-[4%]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="text-center py-10 px-8 rounded-b-xl shadow-xl about-card">
             <MdOutlineContentCut className="h-10 w-10 inline-block relative z-10 about-card-icon" />
             <h3 className="title-font text-[26px] py-2.5 relative z-10">
