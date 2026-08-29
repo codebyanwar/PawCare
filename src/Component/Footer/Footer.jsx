@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const Footer = () => {
     return (
       <div className="bg-primary">
-        <div className="lg:w-7xl lg:mx-auto">
+        <div className="lg:w-7xl lg:mx-auto px-[4%] lg:px-0">
           <div className="footer sm:footer-horizontal text-base-content py-10 lg:flex lg:justify-between">
             <nav className="lg:w-[25%]">
               <div>
@@ -16,7 +16,7 @@ const Footer = () => {
                     PAWCARE
                   </span>
                 </Link>
-                <p className="lg:mt-3">
+                <p className="mt-3">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
                   architecto doloribus laborum, repellat qui consequuntur.
                 </p>
@@ -35,9 +35,11 @@ const Footer = () => {
               <a className="link link-hover">Contact</a>
               <a className="link link-hover">Jobs</a>
               <a className="link link-hover">Press kit</a>
+              <a className="link link-hover">Privacy policy</a>
             </nav>
             <nav>
               <h6 className="footer-title">Social</h6>
+              <p>contact info</p>
               <div className="grid grid-flow-col gap-4">
                 <a>
                   <svg

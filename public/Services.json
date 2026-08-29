@@ -1,0 +1,110 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Keep your dog warm and stylish this winter with our custom coat fitting service. Our team measures your dog's exact body length, chest girth, and neck size to recommend the perfect coat that won't restrict movement or cause chafing. We carry a range of waterproof, insulated, and fleece-lined options suitable for every breed, from short-haired dogs who feel the cold quickly to larger breeds needing extra warmth on long winter walks.",
+    "image": "https://loremflickr.com/600/400/dog,coat,winter",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Snow Boots & Paw Protection",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 20,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Snow, ice, and road salt can seriously damage your pet's paw pads. Our snow boot fitting session ensures your dog gets properly sized, non-slip, waterproof boots that stay secure during walks. We also guide you through a short training routine to help your pet get comfortable wearing boots, since many pets need practice before they'll walk normally in them.",
+    "image": "https://loremflickr.com/600/400/dog,boots,snow",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Warm Winter Spa & Grooming",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 40,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Winter grooming requires special care — over-bathing can strip natural oils that keep your pet's coat insulated. Our winter spa package uses warm-water baths, moisturizing shampoo, and gentle blow-drying to prevent skin dryness and static. We also trim excess paw fur to reduce ice buildup between toes, keeping your pet comfortable during cold-weather walks.",
+    "image": "https://loremflickr.com/600/400/dog,grooming,spa",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Heated Pet Bed Setup & Consultation",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 35,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Older pets and short-haired breeds often struggle to stay warm indoors during winter nights. We help you choose and safely set up a heated pet bed suited to your home, checking cord safety, temperature settings, and placement away from drafts. Our team also shares tips on layering blankets for extra insulation without overheating your pet.",
+    "image": "https://loremflickr.com/600/400/pet,bed,cozy",
+    "category": "Home Comfort"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Paw Balm & Cracked Pad Treatment",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 15,
+    "rating": 4.9,
+    "slotsAvailable": 8,
+    "description": "Cold weather and salted sidewalks can leave paw pads dry, cracked, and painful. Our vet-recommended paw balm treatment soothes and moisturizes damaged pads while forming a protective barrier against snow and ice. We assess your pet's paws and apply balm properly, plus send you home with an easy daily application routine.",
+    "image": "https://loremflickr.com/600/400/dog,paw,care",
+    "category": "Health Care"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Indoor Enrichment & Play Sessions",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 30,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "When outdoor walks are limited by freezing temperatures, pets can get restless and bored. Our indoor enrichment sessions include puzzle toys, scent games, and light exercise routines designed to keep your pet mentally stimulated and physically active, all from the comfort of your home — perfect for high-energy breeds during harsh winter months.",
+    "image": "https://loremflickr.com/600/400/dog,indoor,play",
+    "category": "Activity"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Holiday Sweater & Costume Styling",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 22,
+    "rating": 4.8,
+    "slotsAvailable": 4,
+    "description": "Get your pet ready for the holiday season with our festive sweater and costume styling session. We help select comfortable, breathable outfits that photograph beautifully without restricting movement or causing irritation, perfect for family gatherings, holiday cards, or simply keeping your pet cute and cozy through the season.",
+    "image": "https://loremflickr.com/600/400/dog,sweater,christmas",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Pet Photography Session",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 50,
+    "rating": 5.0,
+    "slotsAvailable": 2,
+    "description": "Capture your pet's winter charm with a professional photoshoot in the snow or a cozy indoor setup. Our photographers specialize in pet behavior, using treats and gentle guidance to get natural, joyful shots — whether it's your dog bounding through fresh snow or your cat curled up by a warm blanket, we create keepsakes you'll treasure.",
+    "image": "https://loremflickr.com/600/400/dog,snow,photography",
+    "category": "Photography"
+  },
+  {
+    "serviceId": 9,
+    "serviceName": "Cozy Cat Winter Care Package",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 28,
+    "rating": 4.9,
+    "slotsAvailable": 6,
+    "description": "Cats also need extra winter attention. This package includes a warm bedding setup, indoor humidity check to prevent dry skin, and a grooming session to reduce shedding-related static. We also provide guidance on keeping indoor cats active and warm during the coldest months, since reduced activity can lead to weight gain in winter.",
+    "image": "https://loremflickr.com/600/400/cat,winter,cozy",
+    "category": "Cat Care"
+  }
+]

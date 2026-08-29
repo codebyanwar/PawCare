@@ -1,0 +1,50 @@
+[
+  {
+    "tipId": 1,
+    "title": "Keep Your Pet's Coat Dry and Well-Groomed",
+    "description": "A damp or matted coat loses its insulating properties, making it harder for your pet to stay warm. After walks in snow or rain, dry your pet thoroughly with a towel, paying extra attention to the paws, belly, and ears. Regular brushing also helps maintain natural oils that keep the coat fluffy and better able to trap warm air close to the skin.",
+    "icon": "MdOutlineDryCleaning"
+  },
+  {
+    "tipId": 2,
+    "title": "Protect Paws from Ice, Salt, and Frostbite",
+    "description": "Road salt and de-icing chemicals can irritate or burn your pet's paw pads, while prolonged exposure to snow increases the risk of frostbite. Use pet-safe paw balm before walks, consider snow boots for extra protection, and always wipe your pet's paws with a damp cloth after outdoor time to remove any residue they might otherwise lick off.",
+    "icon": "GiPawPrint"
+  },
+  {
+    "tipId": 3,
+    "title": "Adjust Food Portions for Winter Activity Levels",
+    "description": "Some pets burn more calories staying warm in cold weather and may need slightly larger portions, while less active indoor pets can gain weight if their diet isn't adjusted. Monitor your pet's body condition throughout winter and consult your vet if you're unsure whether their current feeding routine still fits their activity level.",
+    "icon": "MdOutlineRestaurant"
+  },
+  {
+    "tipId": 4,
+    "title": "Never Leave Pets in Cold Cars",
+    "description": "Just as cars can become dangerously hot in summer, they can turn into freezing enclosures in winter. A parked car loses heat quickly, and pets left inside can suffer from hypothermia within a short time. Always bring your pet with you or leave them safely at home during winter errands.",
+    "icon": "MdOutlineDirectionsCar"
+  },
+  {
+    "tipId": 5,
+    "title": "Provide a Warm, Draft-Free Sleeping Area",
+    "description": "Cold floors and drafty corners can make it hard for pets to stay warm while resting, especially for older animals or short-haired breeds. Set up a cozy bed away from windows and doors, and consider adding an extra blanket or a pet-safe heating pad for particularly cold nights.",
+    "icon": "MdOutlineBedroomParent"
+  },
+  {
+    "tipId": 6,
+    "title": "Watch for Signs of Hypothermia and Frostbite",
+    "description": "Shivering, lethargy, weak pulse, and pale or grey gums can indicate hypothermia, while frostbite often appears as pale, grey, or blackened skin on the ears, tail, or paws. If you notice these signs, warm your pet gradually with blankets and contact a veterinarian immediately rather than waiting to see if symptoms improve.",
+    "icon": "MdOutlineHealthAndSafety"
+  },
+  {
+    "tipId": 7,
+    "title": "Keep Up with Indoor Exercise and Mental Stimulation",
+    "description": "Shorter, colder days often mean less outdoor activity, which can lead to boredom and restlessness. Incorporate indoor games, puzzle feeders, and short training sessions to keep your pet physically and mentally engaged even when outdoor walks are limited.",
+    "icon": "MdOutlineSportsEsports"
+  },
+  {
+    "tipId": 8,
+    "title": "Be Cautious with Antifreeze and De-Icing Chemicals",
+    "description": "Antifreeze has a sweet taste that attracts pets but is highly toxic even in small amounts. Store it securely, clean up spills immediately, and choose pet-safe de-icing products for your driveway or walkway to avoid accidental poisoning.",
+    "icon": "MdOutlineWarningAmber"
+  }
+]
