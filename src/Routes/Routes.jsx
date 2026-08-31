@@ -6,6 +6,7 @@ import About from "../Pages/About";
 import Service from "../Pages/Service";
 import Dashboard from "../Pages/Dashboard";
 import Contact from "../Pages/Contact";
+import ServiceDetails from "../Pages/ServiceDetails";
 
 
 
@@ -21,19 +22,23 @@ const router = createBrowserRouter([
         loader: ()=>fetch('/Services.json')
       },
       {
-        path: '/about',
+        path: 'about',
         Component: About
       },
       {
-        path: '/service',
+        path: 'service',
         Component: Service
       },
       {
-        path: '/dashboard',
+        path: "service/service-details/:id",
+        Component: ServiceDetails
+      },
+      {
+        path: 'dashboard',
         Component: Dashboard
       },
       {
-        path: '/contact',
+        path: 'contact',
         Component: Contact
       }
     ]

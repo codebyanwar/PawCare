@@ -1,3 +1,5 @@
+/* header start */
+
 header .active{
     font-weight: 500;
     position: relative;
@@ -31,6 +33,8 @@ header ul li a::after{
     transition: 0.3s;
 }
 
+/* about start */
+
 .about-card{
     position: relative;
     transition: 0.5s;
@@ -59,4 +63,10 @@ header ul li a::after{
     left: 0;
     border-radius: 12px 0 0 12px;
     transition: 0.6s;
+}
+
+/* service start */
+
+.service-card:hover{
+    box-shadow: 0 0 4px rgba(0,0,0,0.12);
 }

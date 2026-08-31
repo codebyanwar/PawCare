@@ -3,6 +3,7 @@ import aboutImage from '.././assets/about-banner.webp'
 import epicArrow from '.././assets/Epic-arow.webp'
 import { MdOutlineAccessTime, MdOutlineAttachMoney, MdOutlineHealthAndSafety, MdOutlinePets, MdOutlineSupportAgent, MdOutlineVerified } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const AboutSection = () => {
     return (
@@ -61,9 +62,9 @@ const AboutSection = () => {
                 </li>
               </ul>
             </div>
-            <a className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary w-30 lg:w-40 text-[16px] lg:text-[18px] py-2.5 lg:py-6">
+            <Link to="/about" className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary w-30 lg:w-40 text-[16px] lg:text-[18px] py-2.5 lg:py-6">
               About Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

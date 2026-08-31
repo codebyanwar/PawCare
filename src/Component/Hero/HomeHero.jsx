@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeHeroBGImg from '../../assets/hero.webp'
+import { Link } from 'react-router';
 
 const HomeHero = () => {
     return (
@@ -19,9 +20,9 @@ const HomeHero = () => {
               your appointments easily, and enjoy peace of mind knowing
               certified professionals are caring for your pet.
             </p>
-            <a className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary">
+            <Link to="/service" className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary">
               Explore Services
-            </a>
+            </Link>
           </div>
         </div>
       </div>
