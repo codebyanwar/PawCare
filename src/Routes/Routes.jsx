@@ -7,6 +7,8 @@ import Service from "../Pages/Service";
 import Dashboard from "../Pages/Dashboard";
 import Contact from "../Pages/Contact";
 import ServiceDetails from "../Pages/ServiceDetails";
+import { serviceLoader } from "../Loaders/ServiceLoader";
+import ServiceDetailsLoader from "../Loaders/ServiceDetailsLoader";
 
 
 
@@ -19,7 +21,7 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: Home,
-        loader: ()=>fetch('/Services.json')
+        loader: serviceLoader
       },
       {
         path: 'about',
@@ -31,7 +33,8 @@ const router = createBrowserRouter([
       },
       {
         path: "service/service-details/:id",
-        Component: ServiceDetails
+        Component: ServiceDetails,
+        loader: ServiceDetailsLoader
       },
       {
         path: 'dashboard',
