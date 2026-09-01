@@ -25,16 +25,16 @@ const TipsSection = () => {
     }, [])
 
     return (
-      <div className="lg:py-20">
-        <div className="lg:w-7xl mx-auto text-center">
+      <div className="lg:py-20 py-10">
+        <div className="lg:w-7xl mx-auto text-center px-[4%] lg:px-0">
           <h6 className="text-[14px] lg:text-[16px] text-black font-medium">
             Seasonal Guides
           </h6>
-          <h2 className="text-[48px] font-semibold title-font mb-10">
+          <h2 className="text-[26px] lg:text-[48px] font-semibold title-font mb-10">
             Keep Your Pet Safe and Warm This Winter
           </h2>
 
-          <div className='grid grid-cols-2 gap-8'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
             {
                 tips.map(({tipId, title, description, icon})=>{
 
@@ -49,7 +49,7 @@ const TipsSection = () => {
                           <Icon className="h-14 w-14 lg:h-18 lg:w-18 text-primary bg-amber-50 rounded-full p-2.5" />
                         )}
 
-                        <h3 className="text-[16px] lg:text-[22px] font-medium">
+                        <h3 className="text-[18px] lg:text-[22px] font-medium">
                           {title}
                         </h3>
 
