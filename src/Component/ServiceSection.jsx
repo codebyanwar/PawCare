@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import ServiceCard from './Card/ServiceCard';
+import { Link } from 'react-router';
 
 const ServiceSection = ({ serviceData }) => {
 
@@ -22,6 +23,13 @@ const ServiceSection = ({ serviceData }) => {
             ))}
           </Suspense>
         </div>
+
+        <Link
+          to="/service"
+          className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary w-40 lg:w-50 text-[16px] lg:text-[18px] py-2.5 lg:py-6 mt-15"
+        >
+          View All Services
+        </Link>
       </div>
     </div>
   );
