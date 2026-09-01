@@ -5,6 +5,7 @@ import AboutSection from '../Component/AboutSection';
 import ServiceSection from '../Component/ServiceSection';
 import { useLoaderData } from 'react-router';
 import TipsSection from '../Component/TipsSection';
+import TeamSection from '../Component/TeamSection';
 
 const Home = () => {
 
@@ -17,6 +18,7 @@ const Home = () => {
         <AboutSection></AboutSection>
         <ServiceSection serviceData={serviceData}></ServiceSection>
         <TipsSection></TipsSection>
+        <TeamSection></TeamSection>
       </div>
     );
 };

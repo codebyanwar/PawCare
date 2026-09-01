@@ -40,7 +40,7 @@ const ServiceCard = ({ data }) => {
         <p className="font-bold text-18px">Price: ${price}</p>
 
         <Link
-          to={`service/service-details/${serviceId}`}
+          to={`/service/service-details/${serviceId}`}
           className="btn btn-primary shadow-none text-white hover:bg-transparent hover:text-primary mt-2.5"
         >
           View Details

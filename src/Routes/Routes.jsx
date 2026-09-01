@@ -29,7 +29,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'service',
-        Component: Service
+        Component: Service,
+        loader: serviceLoader
+
       },
       {
         path: "service/service-details/:id",
