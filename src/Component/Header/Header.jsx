@@ -11,7 +11,7 @@ const Header = () => {
       <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/">Home</NavLink></li>
       <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/about">About</NavLink></li>
       <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/service">Service</NavLink></li>
-      <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/dashboard">Dashboard</NavLink></li>
+      <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/dashboard">My Profile</NavLink></li>
       <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/contact">Contact</NavLink></li>
   </>
 
