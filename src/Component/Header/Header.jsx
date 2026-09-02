@@ -54,10 +54,10 @@ const Header = () => {
               </ul>
             </div>
 
-            <button className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex">
+            <Link to="/login" className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex">
               <FaRegUserCircle className="text-[20px]" />
               <span>Login</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>

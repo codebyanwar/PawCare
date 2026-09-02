@@ -9,6 +9,8 @@ import Contact from "../Pages/Contact";
 import ServiceDetails from "../Pages/ServiceDetails";
 import { serviceLoader } from "../Loaders/ServiceLoader";
 import ServiceDetailsLoader from "../Loaders/ServiceDetailsLoader";
+import LoginForm from "../Component/Form/LoginForm";
+import RegisterForm from "../Component/Form/RegisterForm";
 
 
 
@@ -17,36 +19,43 @@ const router = createBrowserRouter([
     path: "/",
     Component: MainLayout,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
+    children: [
       {
         index: true,
         Component: Home,
-        loader: serviceLoader
+        loader: serviceLoader,
       },
       {
-        path: 'about',
-        Component: About
+        path: "about",
+        Component: About,
       },
       {
-        path: 'service',
+        path: "service",
         Component: Service,
-        loader: serviceLoader
-
+        loader: serviceLoader,
       },
       {
         path: "service/service-details/:id",
         Component: ServiceDetails,
-        loader: ServiceDetailsLoader
+        loader: ServiceDetailsLoader,
       },
       {
-        path: 'dashboard',
-        Component: Dashboard
+        path: "dashboard",
+        Component: Dashboard,
       },
       {
-        path: 'contact',
-        Component: Contact
+        path: "contact",
+        Component: Contact,
+      },
+      {
+        path: "login",
+        Component: LoginForm,
+      },
+      {
+        path: "/register",
+        Component: RegisterForm,
       }
-    ]
+    ],
   },
 ]);
 
