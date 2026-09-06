@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         Component: LoginForm,
       },
       {
-        path: "/register",
+        path: "register",
         Component: RegisterForm,
       }
     ],
