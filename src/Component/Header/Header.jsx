@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { MdOutlinePets } from 'react-icons/md';
 import { RiMenu3Line } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Header = () => {
+
+  const {user} = use(AuthContext);
+
 
   const navItem = <>
       <li><NavLink className="font-medium py-2 my-1 lg:p-0 hover:bg-transparent active:bg-transparent! active:text-inherit!" to="/">Home</NavLink></li>
@@ -18,6 +22,7 @@ const Header = () => {
     return (
       <div className="shadow-sm bg-primary px-[4%] lg:px-0">
         <div className="navbar lg:w-7xl lg:mx-auto p-0 lg:flex lg:justify-between">
+          <div>{user && user.email}</div>
           <div className="navbar-start lg:w-18">
             <Link to="/" className="flex items-center gap-1 text-base-200">
               <MdOutlinePets className="text-[30px] lg:text-[40px] rotate-315"/>
