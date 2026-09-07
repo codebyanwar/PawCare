@@ -11,8 +11,7 @@ import { serviceLoader } from "../Loaders/ServiceLoader";
 import ServiceDetailsLoader from "../Loaders/ServiceDetailsLoader";
 import LoginForm from "../Component/Form/LoginForm";
 import RegisterForm from "../Component/Form/RegisterForm";
-
-
+import PrivetRoute from "../Provider/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: "service/service-details/:id",
-        Component: ServiceDetails,
+        element: (
+          <PrivetRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivetRoute>
+        ),
         loader: ServiceDetailsLoader,
       },
       {
@@ -54,10 +57,9 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: RegisterForm,
-      }
+      },
     ],
   },
 ]);
-
 
 export default router;
