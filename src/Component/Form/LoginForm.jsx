@@ -1,10 +1,14 @@
 import React, { use } from "react";
-import { Form, Link } from "react-router";
+import { Form, Link, useLocation } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const LoginForm = () => {
 
   const {signIn} = use(AuthContext);
+
+  const location = useLocation();
+
+
 
   const handleSignIN = (e) =>{
     e.preventDefault();
