@@ -1,12 +1,14 @@
-import React, { use } from "react";
-import { Form, Link, useLocation } from "react-router";
+import React, { use, useState } from "react";
+import { Form, Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const LoginForm = () => {
 
   const {signIn} = use(AuthContext);
+  const [error, setError] = useState('');
 
   const location = useLocation();
+  const navigate = useNavigate();
 
 
 
@@ -19,10 +21,12 @@ const LoginForm = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(errorMessage);
       });
   }
 
@@ -42,13 +46,16 @@ const LoginForm = () => {
             <fieldset className="fieldset">
               {/* Email */}
               <label className="label">Email</label>
-              <input name="email" type="email" className="input" placeholder="Email" />
+              <input required name="email" type="email" className="input" placeholder="Email" />
               {/* Password */}
               <label className="label">Password</label>
-              <input name="password" type="password" className="input" placeholder="Password" />
+              <input required name="password" type="password" className="input" placeholder="Password" />
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
+
+              {error && <p className="text-red-600">{error}</p>}
+
               <button className="btn btn-neutral mt-4">Login</button>
             </fieldset>
             <div className="text-center">
