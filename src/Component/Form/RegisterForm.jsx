@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Form, Link } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 
@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const RegisterForm = () => {
 
   const {createUser, setUser} = use(AuthContext)
+  const [nameError, setNameError] = useState("");
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -15,6 +16,14 @@ const RegisterForm = () => {
     const email = form.email.value;
     const photo = form.photo_url.value;
     const password = form.password.value;
+
+    // validation
+    if(name.length > 12 ){
+      setNameError("Name not should be more then 12 charecter");
+      return;
+    }else{
+      setNameError("");
+    }
 
     // user creation
     createUser(email, password)
@@ -49,6 +58,7 @@ const RegisterForm = () => {
               {/* Name */}
               <label className="label">Name</label>
               <input name='name' type="text" className="input" placeholder="Type your name" />
+              {nameError && <p className='text-red-500'>{nameError}</p>}
 
               {/* Email */}
               <label className="label">Email</label>
