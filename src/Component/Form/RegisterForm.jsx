@@ -1,12 +1,14 @@
 import React, { use, useState } from 'react';
-import { Form, Link } from 'react-router';
+import { Form, Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const RegisterForm = () => {
 
-  const {createUser, setUser} = use(AuthContext)
+  const { createUser, setUser, updateUserProfile } = use(AuthContext);
   const [nameError, setNameError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -29,7 +31,15 @@ const RegisterForm = () => {
     createUser(email, password)
     .then((result)=> {
       const user = result.user;
-      setUser(user);
+      updateUserProfile({ displayName: name, photoURL: photo })
+        .then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log(error);
+          setUser(user);
+        });
     })
     .catch((error) => {
       const errorCode = error.code;

@@ -33,7 +33,7 @@ const Header = () => {
         <div className="navbar lg:w-7xl lg:mx-auto p-0 lg:flex lg:justify-between">
           <div className="navbar-start lg:w-18">
             <Link to="/" className="flex items-center gap-1 text-base-200">
-              <MdOutlinePets className="text-[30px] lg:text-[40px] rotate-315"/>
+              <MdOutlinePets className="text-[30px] lg:text-[40px] rotate-315" />
               <span className="text-[30px] lg:text-[40px] mt-1 lg:mt-1.5 heading-font tracking-widest">
                 {" "}
                 PAWCARE
@@ -50,14 +50,14 @@ const Header = () => {
           <div className="navbar-end lg:w-55">
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="lg:hidden">
-                <RiMenu3Line size={22} className='text-base-100' />
+                <RiMenu3Line size={22} className="text-base-100" />
               </div>
               <ul
                 tabIndex={-1}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 {navItem}
-                <li className='mt-1'>
+                <li className="mt-1">
                   {" "}
                   <button className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100">
                     <FaRegUserCircle className="text-[20px]" />
@@ -68,17 +68,24 @@ const Header = () => {
             </div>
 
             <div>
-              {user ?
-                <button onClick={handleLogout} className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex">
-                  <FaRegUserCircle className="text-[20px]" />
+              {user ? (
+                <button
+                  onClick={handleLogout}
+                  className="tooltip tooltip-bottom btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex"
+                  data-tip={user.displayName}
+                >
+                  <img className="w-5" src={user.photoURL} alt="" />
                   <span>Logout</span>
                 </button>
-              :
-                <Link to="/login" className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex">
+              ) : (
+                <Link
+                  to="/login"
+                  className="btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex"
+                >
                   <FaRegUserCircle className="text-[20px]" />
                   <span>Login</span>
                 </Link>
-              }
+              )}
             </div>
           </div>
         </div>

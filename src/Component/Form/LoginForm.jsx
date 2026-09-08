@@ -48,8 +48,12 @@ const LoginForm = () => {
               <label className="label">Email</label>
               <input required name="email" type="email" className="input" placeholder="Email" />
               {/* Password */}
-              <label className="label">Password</label>
-              <input required name="password" type="password" className="input" placeholder="Password" />
+              <div className="relative">
+                <label className="label">Password</label>
+                <input required name="password" type="password" className="input" placeholder="Password" />
+                <button className="btn btn-xs absolute right-6">Eye</button>
+              </div>
+
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
