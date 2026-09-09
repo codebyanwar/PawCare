@@ -6,6 +6,7 @@ const LoginForm = () => {
 
   const {signIn} = use(AuthContext);
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -46,12 +47,29 @@ const LoginForm = () => {
             <fieldset className="fieldset">
               {/* Email */}
               <label className="label">Email</label>
-              <input required name="email" type="email" className="input" placeholder="Email" />
+              <input
+                required
+                name="email"
+                type="email"
+                className="input"
+                placeholder="Email"
+              />
               {/* Password */}
               <div className="relative">
                 <label className="label">Password</label>
-                <input required name="password" type="password" className="input" placeholder="Password" />
-                <button className="btn btn-xs absolute right-6">Eye</button>
+                <input
+                  required
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                />
+                <button
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="btn btn-xs absolute top-6.5 right-6.5"
+                >
+                  Eye
+                </button>
               </div>
 
               <div>
@@ -60,10 +78,15 @@ const LoginForm = () => {
 
               {error && <p className="text-red-600">{error}</p>}
 
-              <button className="btn btn-neutral mt-4">Login</button>
+              <button type="submit" className="btn btn-neutral mt-4">Login</button>
             </fieldset>
             <div className="text-center">
-                <p className="text-[16px]">Don't have any account <Link to='/register' className="text-blue-600 font-semibold">Registar Now!</Link></p>
+              <p className="text-[16px]">
+                Don't have any account{" "}
+                <Link to="/register" className="text-blue-600 font-semibold">
+                  Regisiter Now!
+                </Link>
+              </p>
             </div>
           </Form>
         </div>
