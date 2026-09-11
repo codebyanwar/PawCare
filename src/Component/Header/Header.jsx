@@ -4,6 +4,7 @@ import { MdOutlinePets } from 'react-icons/md';
 import { RiMenu3Line } from 'react-icons/ri';
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const Header = () => {
@@ -13,7 +14,7 @@ const Header = () => {
   const handleLogout = () =>{
     Logout()
     .then(() => {
-      alert("you loged out successfully");
+      toast.success("you loged out successfully");
     })
     .catch((error) => {
       console.log(error);
@@ -89,6 +90,7 @@ const Header = () => {
             </div>
           </div>
         </div>
+        <ToastContainer position="top-right"></ToastContainer>
       </div>
     );
 };

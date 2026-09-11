@@ -5,9 +5,24 @@ import {
   MdOutlineStorefront,
   MdOutlineEventAvailable,
 } from "react-icons/md";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
+
+import ServiceBookingForm from "../Component/Form/ServiceBookingForm";
+
 
 const ServiceDetails = () => {
   const service = useLoaderData();
+
+  const handleBookAService = () =>{
+    MySwal.fire({
+      title: `Book ${serviceName} Service`,
+      html: <ServiceBookingForm></ServiceBookingForm>,
+      showConfirmButton: false,
+      showCloseButton: true,
+    });
+  }
 
   const {
     category,
@@ -26,7 +41,7 @@ const ServiceDetails = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-10 py-14 lg:py-20 grid lg:grid-cols-[1fr_1fr] gap-14 items-start">
         {/* Left: image */}
         <div className="relative">
-          <div className="rounded-[2rem] overflow-hidden aspect-[4/3]">
+          <div className="rounded-4xl overflow-hidden aspect-4/3">
             <img
               src={image}
               alt={serviceName}
@@ -105,9 +120,15 @@ const ServiceDetails = () => {
             </div>
           </div>
 
-          <a href="tel:010000000" className="btn mt-10 bg-primary text-base-300 px-8 py-5 rounded-full hover:bg-primary/80 transition-colors">
-            Request This Service
-          </a>
+          <div className="flex gap-5">
+            <button onClick={handleBookAService} className="btn mt-10 bg-primary text-base-300 px-8 py-5 rounded-full hover:bg-primary/80 transition-colors">
+              Book Service
+            </button>
+
+            <a href="tel:010000000" className="btn mt-10 bg-primary text-base-300 px-8 py-5 rounded-full hover:bg-primary/80 transition-colors">
+              Book Service By Call
+            </a>
+          </div>
         </div>
       </div>
     </div>

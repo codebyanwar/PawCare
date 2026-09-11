@@ -2,11 +2,11 @@ import React, { use, useState } from "react";
 import { Form, Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const LoginForm = () => {
 
   const {signIn} = use(AuthContext);
-  const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const location = useLocation();
@@ -22,13 +22,20 @@ const LoginForm = () => {
 
     signIn(email, password)
       .then((result) => {
+          Swal.fire({
+            text: "You Are Logged In Successfully",
+            icon: "success",
+          });
         const user = result.user;
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          text: "Check your credentials and try again",
+        });
         const errorCode = error.code;
         const errorMessage = error.message;
-        setError(errorMessage);
       });
   }
 
@@ -77,8 +84,6 @@ const LoginForm = () => {
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
-
-              {error && <p className="text-red-600">{error}</p>}
 
               <button type="submit" className="btn btn-neutral mt-4">
                 Login

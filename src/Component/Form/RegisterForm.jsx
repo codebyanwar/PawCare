@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Form, Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const RegisterForm = () => {
@@ -33,6 +34,8 @@ const RegisterForm = () => {
     createUser(email, password)
     .then((result)=> {
       const user = result.user;
+      toast.success("Registration successful!");
+
       updateUserProfile({ displayName: name, photoURL: photo })
         .then(() => {
           setUser({ ...user, displayName: name, photoURL: photo });
@@ -44,9 +47,7 @@ const RegisterForm = () => {
         });
     })
     .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage);
+      toast.error(error.message);
     })
 
     // e.target.reset();
@@ -114,7 +115,7 @@ const RegisterForm = () => {
 
               {/* submit button */}
               <button type="submit" className="btn btn-neutral mt-4">
-                Registar Now
+                Register Now
               </button>
             </fieldset>
             <div className="text-center">
@@ -128,6 +129,7 @@ const RegisterForm = () => {
           </Form>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={3000}></ToastContainer>
     </div>
   );
 };
