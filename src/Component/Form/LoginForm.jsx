@@ -1,6 +1,7 @@
 import React, { use, useState } from "react";
 import { Form, Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 const LoginForm = () => {
 
@@ -65,10 +66,11 @@ const LoginForm = () => {
                   placeholder="Password"
                 />
                 <button
+                  type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="btn btn-xs absolute top-6.5 right-6.5"
                 >
-                  Eye
+                  {!showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
                 </button>
               </div>
 
@@ -78,7 +80,9 @@ const LoginForm = () => {
 
               {error && <p className="text-red-600">{error}</p>}
 
-              <button type="submit" className="btn btn-neutral mt-4">Login</button>
+              <button type="submit" className="btn btn-neutral mt-4">
+                Login
+              </button>
             </fieldset>
             <div className="text-center">
               <p className="text-[16px]">

@@ -1,12 +1,14 @@
 import React, { use, useState } from 'react';
 import { Form, Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
 
 const RegisterForm = () => {
 
   const { createUser, setUser, updateUserProfile } = use(AuthContext);
   const [nameError, setNameError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -57,36 +59,63 @@ const RegisterForm = () => {
           <h1 className="text-5xl font-bold">Register now!</h1>
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-            et a id nisi.
+            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+            a id nisi.
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
           <Form onSubmit={handleRegister} className="card-body">
             <fieldset className="fieldset">
-
               {/* Name */}
               <label className="label">Name</label>
-              <input name='name' type="text" className="input" placeholder="Type your name" />
-              {nameError && <p className='text-red-500'>{nameError}</p>}
+              <input
+                name="name"
+                type="text"
+                className="input"
+                placeholder="Type your name"
+              />
+              {nameError && <p className="text-red-500">{nameError}</p>}
 
               {/* Email */}
               <label className="label">Email</label>
-              <input name='email' type="email" className="input" placeholder="Type your email" />
+              <input
+                name="email"
+                type="email"
+                className="input"
+                placeholder="Type your email"
+              />
 
               {/* Photo URL */}
               <label className="label">Photo URL</label>
-              <input name='photo_url' type="text" className="input" placeholder="Paste your photo url" />
+              <input
+                name="photo_url"
+                type="text"
+                className="input"
+                placeholder="Paste your photo url"
+              />
 
               {/* Password */}
-              <label className="label">Password</label>
-              <input
-                name='password'
-                type="password"
-                className="input"
-                placeholder="Password"
-              />
-              <button type='submit' className="btn btn-neutral mt-4">Registar Now</button>
+              <div className="relative">
+                <label className="label">Password</label>
+                <input
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                />
+                <button
+                  onClick={() => setShowPassword(!showPassword)}
+                  type="button"
+                  className="btn btn-xs absolute top-6.5 right-6.5"
+                >
+                  {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                </button>
+              </div>
+
+              {/* submit button */}
+              <button type="submit" className="btn btn-neutral mt-4">
+                Registar Now
+              </button>
             </fieldset>
             <div className="text-center">
               <p className="text-[16px]">
