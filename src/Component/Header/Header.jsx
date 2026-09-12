@@ -75,7 +75,11 @@ const Header = () => {
                   className="tooltip tooltip-bottom btn border border-solid border-base-100 hover:bg-transparent hover:text-base-100 hidden lg:flex"
                   data-tip={user.displayName}
                 >
-                  <img className="w-5 rounded-full" src={user?.photoURL || <FaRegUserCircle/>} alt="" />
+                  <img
+                    className="w-5 rounded-full"
+                    src={user?.photoURL || "https://i.ibb.co/5GzXkwq/user.png"}
+                    alt=""
+                  />
                   <span>Logout</span>
                 </button>
               ) : (

@@ -6,6 +6,7 @@ import ServiceSection from '../Component/ServiceSection';
 import { useLoaderData } from 'react-router';
 import TipsSection from '../Component/TipsSection';
 import TeamSection from '../Component/TeamSection';
+import Testimonials from '../Component/Testimonials';
 
 const Home = () => {
 
@@ -19,6 +20,7 @@ const Home = () => {
         <ServiceSection serviceData={serviceData}></ServiceSection>
         <TipsSection></TipsSection>
         <TeamSection></TeamSection>
+        <Testimonials></Testimonials>
       </div>
     );
 };

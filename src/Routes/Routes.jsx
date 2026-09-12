@@ -13,6 +13,7 @@ import LoginForm from "../Component/Form/LoginForm";
 import RegisterForm from "../Component/Form/RegisterForm";
 import PrivetRoute from "../Provider/PrivetRoute";
 import UpdateProfile from "../Component/UpdateProfile";
+import Loading from "../Component/Loading";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: serviceLoader,
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "about",
@@ -33,6 +35,7 @@ const router = createBrowserRouter([
         path: "service",
         Component: Service,
         loader: serviceLoader,
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "service/service-details/:id",
@@ -42,6 +45,7 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ServiceDetailsLoader,
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "dashboard",
@@ -61,7 +65,7 @@ const router = createBrowserRouter([
       },
       {
         path: "update-profile",
-        Component: UpdateProfile
+        Component: UpdateProfile,
       },
     ],
   },
