@@ -12,6 +12,7 @@ import ServiceDetailsLoader from "../Loaders/ServiceDetailsLoader";
 import LoginForm from "../Component/Form/LoginForm";
 import RegisterForm from "../Component/Form/RegisterForm";
 import PrivetRoute from "../Provider/PrivetRoute";
+import UpdateProfile from "../Component/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         Component: RegisterForm,
+      },
+      {
+        path: "update-profile",
+        Component: UpdateProfile
       },
     ],
   },

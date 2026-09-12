@@ -3,12 +3,14 @@ import { Form, Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 
 const RegisterForm = () => {
 
-  const { createUser, setUser, updateUserProfile } = use(AuthContext);
+  const { createUser, setUser, updateUserProfile, verifyEmail, googleSignIn } = use(AuthContext);
   const [nameError, setNameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -30,10 +32,27 @@ const RegisterForm = () => {
       setNameError("");
     }
 
+    // password validation
+    const hasUppercase = /[A-Z]/.test(password);
+    const hasLowercase = /[a-z]/.test(password);
+    const hasMinLength = password.length >= 6;
+
+    if (!hasUppercase || !hasLowercase || !hasMinLength) {
+      setPasswordError(
+        "Password must contain uppercase, lowercase, and at least 6 characters.",
+      );
+      return;
+    }
+
+    setPasswordError("");
+
+
+
     // user creation
     createUser(email, password)
     .then((result)=> {
       const user = result.user;
+
       toast.success("Registration successful!");
 
       updateUserProfile({ displayName: name, photoURL: photo })
@@ -45,6 +64,8 @@ const RegisterForm = () => {
           console.log(error);
           setUser(user);
         });
+
+      return verifyEmail();
     })
     .catch((error) => {
       toast.error(error.message);
@@ -52,6 +73,28 @@ const RegisterForm = () => {
 
     // e.target.reset();
   };
+
+const handleGoogleSignUp = () => {
+  googleSignIn()
+    .then((result) => {
+      console.log(result.user);
+
+      Swal.fire({
+        icon: "success",
+        text: "You Are Registered Successfully",
+      });
+
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+
+      Swal.fire({
+        icon: "error",
+        text: error.message,
+      });
+    });
+};
 
   return (
     <div className="hero bg-base-200 min-h-screen">
@@ -113,11 +156,20 @@ const RegisterForm = () => {
                 </button>
               </div>
 
+              {passwordError && <p className="text-red-500">{passwordError}</p>}
+
               {/* submit button */}
               <button type="submit" className="btn btn-neutral mt-4">
                 Register Now
               </button>
             </fieldset>
+            <button
+              type="button"
+              className="btn btn-outline w-full"
+              onClick={handleGoogleSignUp}
+            >
+              Continue with Google
+            </button>
             <div className="text-center">
               <p className="text-[16px]">
                 Already have an account{" "}

@@ -5,13 +5,13 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const LoginForm = () => {
-
-  const {signIn} = use(AuthContext);
+    
+  const { signIn, forgetPassword, googleSignIn } = use(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
-
 
 
   const handleSignIN = (e) =>{
@@ -22,11 +22,20 @@ const LoginForm = () => {
 
     signIn(email, password)
       .then((result) => {
+          const user = result.user;
+
+          // if (!user.emailVerified) {
+          // Swal.fire({
+          //   icon: "warning",
+          //   text: "Please verify your email before logging in.",
+          // });
+          // return;
+          // }
+
           Swal.fire({
             text: "You Are Logged In Successfully",
             icon: "success",
           });
-        const user = result.user;
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
@@ -36,7 +45,29 @@ const LoginForm = () => {
         });
         const errorCode = error.code;
         const errorMessage = error.message;
+    });
+  }
+
+  const handleGoogleSignIn = () =>{
+  googleSignIn()
+    .then((result) => {
+      console.log(result.user);
+
+      Swal.fire({
+        icon: "success",
+        text: "You Are Logged In Successfully",
       });
+
+      navigate("/");
+    })
+    .catch((error) => {
+      console.log(error);
+
+      Swal.fire({
+        icon: "error",
+        text: error.message,
+      });
+    });
   }
 
   return (
@@ -61,6 +92,7 @@ const LoginForm = () => {
                 type="email"
                 className="input"
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
               {/* Password */}
               <div className="relative">
@@ -82,13 +114,48 @@ const LoginForm = () => {
               </div>
 
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (!email) {
+                      Swal.fire({
+                        icon: "warning",
+                        text: "Please enter your email first",
+                      });
+                      return;
+                    }
+
+                    forgetPassword(email)
+                      .then(() => {
+                        Swal.fire({
+                          icon: "success",
+                          text: "Password reset email sent. Please check your inbox.",
+                        });
+                      })
+                      .catch((error) => {
+                        Swal.fire({
+                          icon: "error",
+                          text: error.message,
+                        });
+                      });
+                  }}
+                  className="link link-hover"
+                >
+                  Forgot password?
+                </button>{" "}
               </div>
 
               <button type="submit" className="btn btn-neutral mt-4">
                 Login
               </button>
             </fieldset>
+            <button
+              type="button"
+              className="btn btn-outline w-full"
+              onClick={handleGoogleSignIn}
+            >
+              Continue with Google
+            </button>
             <div className="text-center">
               <p className="text-[16px]">
                 Don't have any account{" "}
